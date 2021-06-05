@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block meta1 %}
+<meta name="keywords" content="大學門教育事業體系, 關於我們">
+<meta property="og:title" content="大學門教育事業體系 - 關於我們" />
+<meta property="og:url" content="https://dasyuemen.com.tw/about" />
+{% endblock %}
+{% block title %}大學門教育事業體系 - 關於我們{% endblock %}
+
+{% block main %}
+  <section class="container-banner">
+    <div class="container">
+      <!-- <div class="page-banner-slogan">
+                <h1>分校介紹</h1>
+                <p>專辨高中升大學專業補習班 選擇大學門讓你在高中生涯競爭展翅高飛</p>
+            </div> -->
+    </div>
+    <div class="banner-cover">
+      <img src="static/img/banner-cover.png" width="100%" alt="">
+    </div>
+  </section>
+  <div class="container">
+    <div class="breadcrumb">
+      <p><a href="./">首頁</a></p>
+      <i class="fa fa-angle-right"></i>
+      <p>關於我們</p>
+    </div>
+    <h1 class="content-page-title">關於我們</h1>
+  </div>
+  <section class="about-content">
+    <div class="container">
+      <h1>關於大學門</h1>
+      <p class="text-pre-wrap">大學門服務範圍廣佈大中部地區，包括台中、彰化、員林等地。體系歷史起於民國88年創辦至今，專辦各項高中課程，除此之外，並隨時跟上教育部新課綱，開辦各項特色課程。高中升大學的家教班、學測總複習班及高四重考班之專業度和成熟度無可挑剔。<br><br>
+大學門教育事業體系秉持的辦學宗旨：用心與細心。
+在教材與課程安排上的用心，不僅使學子在課業上有所進步，在學習的過程中也能夠建立自信，養成真正的自主學習。細心在各項環節的注意，除了學習環境讓家長真正安心，做到定期消毒與嚴格執行人員管控，進而在輔導每位學生也能細心到每個讀書的環節。大學門教育事業體系擁有黃金辦學團隊及教學師資，且在大中部地區辦學擁有穩定榜單且年年再創佳績。在歷經十數年頭的優質辦學後，更在水利大樓設立育才分校提供學生最完整的升學服務，協助學生可以朝自已的目標更進一步。真正幫助學生登臨巔峰！</p>
+    </div>
+    <div class="container-fluid">
+      <h1>因為堅持所以最棒！</h1>
+    </div>
+  </section>
+  <section class="slogan-section">
+    <div class="container">
+      <h3>用心、信心、安心一直是大學門的宗旨；<br>
+        誠實、踏實、確實是永續經營的精神，堅持專辦所以最棒！</h3>
+    </div>
+  </section>
+  <section class="about-img">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="center">
+          <div><img src="static/img/school/文華班_1280x720.jpg" width="100%" alt=""></div>
+          <div><img src="static/img/school/文華班2_1280x720.jpg" width="100%" alt=""></div>
+          <div><img src="static/img/school/文華班3_1280x720.jpg" width="100%" alt=""></div>
+          <div><img src="static/img/school/育才班2_1280x720.jpg" width="100%" alt=""></div>
+          <div><img src="static/img/school/水利班_1280x720.jpg" width="100%" alt=""></div>
+          <div><img src="static/img/school/彰化班0_1280x720.jpg" width="100%" alt=""></div>
+          <div><img src="static/img/school/彰化班1_1280x720.jpg" width="100%" alt=""></div>
+          <div><img src="static/img/school/彰化班3_1280x720.jpg" width="100%" alt=""></div>
+          <div><img src="static/img/school/園林般_1280x720.jpg" width="100%" alt=""></div>
+          <div><img src="static/img/school/園林般1_1280x720.jpg" width="100%" alt=""></div>
+          <div><img src="static/img/school/園林般2_1280x720.jpg" width="100%" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block script %}
+
+  <script type="text/javascript">
+    window.onscroll = function () {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("main-navbar").style.backgroundColor = "#fcb527";
+      } else {
+        document.getElementById("main-navbar").style.backgroundColor = "transparent";
+      }
+    }
+    $(document).ready(function () {
+      $('.center').slick({
+        centerMode: true,
+        centerPadding: '0px',
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 3,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              dots: true,
+              centerMode: true,
+              centerPadding: '20px',
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              dots: true,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
+  </script>
+{% endblock %}
+

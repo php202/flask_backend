@@ -1,0 +1,104 @@
+[
+  {
+    "group": "國文",
+    "name": "紹堂老師",
+    "subject": "高中 國文",
+    "description": "兼具深度教學及趣味性抓住學生的心，\n獨創的邏輯理解 結構 類推 思辨，\n新學制 新課綱 素養活用 閱讀寫作\n每月作文實戰演練，名言佳句整理運用，讓同學\n的寫作能力突飛猛進",
+    "imageUrl": "static/img/teachers/國文-紹堂2.png"
+  },
+  {
+    "group": "國文",
+    "name": "林正堂老師",
+    "subject": "高中 國模",
+    "description": "兼具深度教學及趣味性抓住學生的心，\n獨創的邏輯理解 結構 類推 思辨，\n新學制 新課綱 素養活用 閱讀寫作\n每月作文實戰演練，名言佳句整理運用，讓同學\n的寫作能力突飛猛進",
+    "imageUrl": "static/img/teachers/正堂500X500.png"
+  },
+  {
+    "group": "英文",
+    "name": "奇諺老師",
+    "subject": "高中 英文",
+    "description": "紐約市立大學碩士 常春藤賓州大學英語教師認證\n全台北中南 台北 新竹 台中 台南 高雄 ，高中同學指定，\n名師教學，全方位菁英班，完整輔導，教材完整到學校老師都借閱參考，連續每年正中考題核心，各家媒體指定專訪",
+    "imageUrl": "static/img/teachers/奇諺500X500.gif"
+  }, {
+    "group": "英文",
+    "name": "唐崴老師",
+    "subject": "高中 英文",
+    "description": "建國中學 台灣大學外文語言組\n1.雙語授課\n安排外師與中師英雙語授課 免費外師口說輔導\n2.新聞英文\n每週精選國內外重要新聞中英對照，引導學生讀懂CNN，BBC等國際知名媒體英語新聞\n3.原文書/影音教學\n精選教育意義的歐美電影，引領同學深入了解西方文化",
+    "imageUrl": "static/img/teachers/唐崴500X500.png"
+  }, {
+    "group": "英文",
+    "name": "蔣玹老師",
+    "subject": "高中 英文",
+    "description": "獨創口訣式教學，針對閱讀速度與文法基礎雙管齊下，豐富多元的教材內容，時事補充讓你的英文能力與時俱進。",
+    "imageUrl": "static/img/teachers/蔣玹2.jpg"
+  },
+  {
+    "group": "數學",
+    "name": "孟烜老師",
+    "subject": "高中 數學",
+    "description": "彰中數理資優班畢業 交大應用數學系畢業\n(以第一名優異成績錄取)\n還沒聽過孟烜，千萬不要放棄數學，親切帥氣平易近人的教學態度，輔導團隊讓學生都問得道問題，在難的題目都可以輕鬆解開",
+    "imageUrl": "static/img/teachers/數學500X500.png"
+  }, {
+    "group": "數學",
+    "name": "許原老師",
+    "subject": "高中 數學",
+    "description": "資深數學名師\n超強親和力讓學生在不知不覺中愛上數學",
+    "imageUrl": ""
+  },
+  {
+    "group": "自然",
+    "name": "林岦老師",
+    "subject": "高中 物理",
+    "description": "著重觀念的建立，圖表式的匯整，\n讓同學對於物理的學習有清楚明了的架構，\n重於題型的延伸探討使同學能夠自主思考，\n匯整全世界的素養題型，將物理教的簡單",
+    "imageUrl": "static/img/teachers/林岦500X500.gif"
+  }, {
+    "group": "自然",
+    "name": "柯易老師",
+    "subject": "高中 物理",
+    "description": "物理其實可以很容易\n柯易讓你的物理不再是霧裡",
+    "imageUrl": "static/img/teachers/柯易2.png"
+  }, {
+    "group": "自然",
+    "name": "張浩老師",
+    "subject": "高中 化學",
+    "description": "台灣大學化學系 博士班\n中山醫學大學化學系 碩士班\n內容由淺入深，舉例淺顯易懂，\n回歸自然觀念，跨領域教學，\n實例解說自然科素養命題脈絡",
+    "imageUrl": "static/img/teachers/張浩500X500.png"
+  }, {
+    "group": "自然",
+    "name": "周逸老師",
+    "subject": "高中 化學",
+    "description": "自創整合題\n各類題型分析\n重視邏輯推理 \n分析歷屆出題機率\n獨家重點筆記",
+    "imageUrl": "static/img/teachers/化學-曾學毅2.png"
+  }, {
+    "group": "自然",
+    "name": "陸謙老師",
+    "subject": "高中 生物",
+    "description": "活潑生動，結合日常，無需死背，以邏輯推理的科學思維來學習生物。",
+    "imageUrl": ""
+  }, {
+    "group": "自然",
+    "name": "林靖老師",
+    "subject": "高中 地科",
+    "description": "簡潔扼要的上課筆記，善用速解法與譬喻法，輕鬆記憶地科概念。",
+    "imageUrl": "static/img/teachers/林靖500X500.png"
+  },
+  {
+    "group": "社會",
+    "name": "高健老師",
+    "subject": "高中 歷史",
+    "description": "系統的歸納整理，內容紮實有條理，公認歷史教學最真的名師",
+    "imageUrl": "static/img/teachers/高健2.jpg"
+  }, {
+    "group": "社會",
+    "name": "林全老師",
+    "subject": "高中 地理",
+    "description": "幽默風趣的教學，生活帶入學習，不需死背便能過目不忘。",
+    "imageUrl": "static/img/teachers/林全2.png"
+  }, {
+    "group": "社會",
+    "name": "柯博文老師",
+    "subject": "高中 公民",
+    "description": "架構式筆記，輕鬆掌握全部能力，理論與實務結合，清晰表達繁雜學理",
+    "imageUrl": "static/img/teachers/柯博文2.png"
+  }
+]

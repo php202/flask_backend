@@ -1,0 +1,729 @@
+{% extends "base.html" %}
+{% block meta1 %}
+<meta name="keywords" content="大學門教育事業體系, 重考班">
+<meta property="og:url" content="https://dasyuemen.com.tw/class-B" />
+<meta property="og:title" content="大學門教育事業體系 - 重考班" />
+{% endblock %}
+{% block title %}大學門教育事業體系{% endblock %}
+{% block main %}
+  <section class="container-banner">
+    <div class="container">
+      <div class="page-banner-slogan">
+        <h1>重考班</h1>
+      </div>
+    </div>
+    <div class="banner-cover">
+      <img src="static/img/banner-cover.png" width="100%" alt="">
+    </div>
+  </section>
+  <div class="container">
+    <div class="breadcrumb">
+      <p><a href="index">首頁</a></p>
+      <i class="fa fa-angle-right"></i>
+      <p>重考班</p>
+    </div>
+    <h1 class="content-page-title">重考班</h1>
+  </div>
+  <section class="teacher-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-3 left-tab">
+          <button class="left-tablinks" onclick="openContentType(event, '頂醫班')" id="leftDefaultOpen">頂醫班</button>
+          <button class="left-tablinks" onclick="openContentType(event, '醫超班')">醫超班</button>
+          <button class="left-tablinks" onclick="openContentType(event, '台政班')">台政班</button>
+        </div>
+        <div id="頂醫班" class="col-12 col-sm-9 left-tabcontent class-B-content">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="classB-title">重考班 - 頂醫班</h2>
+              <p class="text-center">意志堅強的人 他的世界充滿著無限的可能</p>
+              <p class="text-center">專為想上醫科的你量身打造的班級</p>
+              <h3>介紹</h3>
+              <dl style="margin-left: 40px">
+                <dt>管理</dt>
+                <dd>小班制教學，導師清楚了解每一位同學的學習狀況。</dd>
+
+                <dt>環境</dt>
+                <dd>專為重考班學生打造的讀書環境，寬廣的上課教室、坐一空一的座位、VIP獨立自習空間，學生休息區還有沙發、運動器材。</dd>
+
+                <dt>診斷</dt>
+                <dd>教育界最先進的系統，利用大數據分析，找出你各科的弱點，針對式的加強。</dd>
+
+                <dt>家教</dt>
+                <dd>除了有一般的解題老師，也給你一對一的家教。針對學生不足的地方個別加強，補強真正的弱點。</dd>
+
+                <dt>多元課程</dt>
+                <dd>面對108課綱，大學門除了給你完整的課程學習，也給你別人沒有的多元課程，讓你面對108課網的學習歷程，不再害怕徬徨。</dd>
+
+                <dt>PBL/MMI</dt>
+                <dd>專業輔導團隊，小組訓練、醫學系教授親自面試。</dd>
+              </dl>
+            </div>
+
+            <div class="col-12 overflow-auto">
+              <h3 class="pos-sticky left-0">課表</h3>
+              <div class="curriculum">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <span>一</span>
+                      </td>
+                      <td>
+                        <span>二</span>
+                      </td>
+                      <td>
+                        <span>三</span>
+                      </td>
+                      <td>
+                        <span>四</span>
+                      </td>
+                      <td>
+                        <span>五</span>
+                      </td>
+                      <td>
+                        <span>六</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span>08:30~08:50</span>
+                      </td>
+                      <td>
+                        <span>晨考</span>
+                      </td>
+                      <td>
+                        <span>晨考</span>
+                      </td>
+                      <td>
+                        <span>晨考</span>
+                      </td>
+                      <td>
+                        <span>晨考</span>
+                      </td>
+                      <td>
+                        <span>晨考</span>
+                      </td>
+                      <td>
+                        <span>晨考</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span>09:00~12:10</span>
+                      </td>
+                      <td>
+                        <span>國文</span>
+                      </td>
+                      <td>
+                        <span>生物 / 地科</span>
+                      </td>
+                      <td>
+                        <span>英模</span>
+                      </td>
+                      <td>
+                        <span>數學</span>
+                      </td>
+                      <td>
+                        <span>教練課</span>
+                      </td>
+                      <td>
+                        <span>週考</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span>13:50~17:00</span>
+                      </td>
+                      <td>
+                        <span>數學</span>
+                      </td>
+                      <td>
+                        <span>英文</span>
+                      </td>
+                      <td>
+                        <span>化學</span>
+                      </td>
+                      <td>
+                        <span>國模 / 國寫</span>
+                      </td>
+                      <td>
+                        <span>物理</span>
+                      </td>
+                      <td>
+                        <span>自習衝刺</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span>18:40~20:00</span>
+                      </td>
+                      <td>
+                        <span>自習輔導</span>
+                      </td>
+                      <td>
+                        <span>自習輔導</span>
+                      </td>
+                      <td>
+                        <span>自習輔導</span>
+                      </td>
+                      <td>
+                        <span>自習輔導</span>
+                      </td>
+                      <td>
+                        <span>自習輔導</span>
+                      </td>
+                      <td>
+                        <span>自由到班</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>*此為模擬課表</p>
+            </div>
+
+            <div class="col-12">
+              <h3>師資</h3>
+              <div id="頂醫班content" class="row"></div>
+            </div>
+          </div>
+        </div>
+        <div id="醫超班" class="col-12 col-sm-9 left-tabcontent class-B-content">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="classB-title">重考班 - 醫超班</h2>
+              <p class="text-center">持續追夢 永不放棄</p>
+              <p class="text-center">高強度的課程安排、大量的解題訓練、完整的重點整理，讓你的成績一飛沖天</p>
+              <h3>介紹</h3>
+              <dl style="margin-left: 40px">
+                <dt>管理</dt>
+                <dd>淘汰舊式高壓式管理，以最嚴謹的態度執行人性化的管理，幫助學生更有效的運用每分每秒的時間，達到最好的讀書效果。</dd>
+
+                <dt>環境</dt>
+                <dd>專為重考班學生打造的讀書環境，寬廣的上課教室、VIP獨立自習空間，學生休息區還有沙發、運動器材。</dd>
+
+                <dt>診斷</dt>
+                <dd>教育界最先進的系統，利用大數據分析，找出你各科的弱點，針對式的加強。</dd>
+
+                <dt>家教</dt>
+                <dd>除了有一般的解題老師，也給你一對一的家教。針對學生不足的地方個別加強，補強真正的弱點。</dd>
+
+                <dt>多元課程</dt>
+                <dd>大學門除了給你完整的課程學習，也給你別人沒有的多元課程，幫助您完善學習歷程，讓你面對108課網，不再害怕徬徨。</dd>
+
+                <dt>二階段</dt>
+                <dd>專業輔導團隊，完整的口面試訓練，讓你在面對二階段時獲得比學測更高的分數。</dd>
+              </dl>
+            </div>
+
+            <div class="col-12 overflow-auto">
+              <h3 class="pos-sticky left-0">課表</h3>
+              <div class="curriculum">
+                <table>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <span>一</span>
+                    </td>
+                    <td>
+                      <span>二</span>
+                    </td>
+                    <td>
+                      <span>三</span>
+                    </td>
+                    <td>
+                      <span>四</span>
+                    </td>
+                    <td>
+                      <span>五</span>
+                    </td>
+                    <td>
+                      <span>六</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>08:30~08:50</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>09:00~12:10</span>
+                    </td>
+                    <td>
+                      <span>國文</span>
+                    </td>
+                    <td>
+                      <span>生物 / 地科</span>
+                    </td>
+                    <td>
+                      <span>英模</span>
+                    </td>
+                    <td>
+                      <span>數學</span>
+                    </td>
+                    <td>
+                      <span>教練課</span>
+                    </td>
+                    <td>
+                      <span>週考</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>13:50~17:00</span>
+                    </td>
+                    <td>
+                      <span>數學</span>
+                    </td>
+                    <td>
+                      <span>英文</span>
+                    </td>
+                    <td>
+                      <span>化學</span>
+                    </td>
+                    <td>
+                      <span>國模 / 國寫</span>
+                    </td>
+                    <td>
+                      <span>物理</span>
+                    </td>
+                    <td>
+                      <span>自習衝刺</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>18:40~20:00</span>
+                    </td>
+                    <td>
+                      <span>自習輔導</span>
+                    </td>
+                    <td>
+                      <span>自習輔導</span>
+                    </td>
+                    <td>
+                      <span>自習輔導</span>
+                    </td>
+                    <td>
+                      <span>自習輔導</span>
+                    </td>
+                    <td>
+                      <span>自習輔導</span>
+                    </td>
+                    <td>
+                      <span>自由到班</span>
+                    </td>
+                  </tr>
+                </tbody>
+                </table>
+                <p>*此為模擬課表</p>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <h3>師資</h3>
+              <div id="醫超班content" class="row"></div>
+            </div>
+          </div>
+        </div>
+        <div id="台政班" class="col-12 col-sm-9 left-tabcontent class-B-content">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="classB-title">重考班 - 台政班</h2>
+              <p class="text-center">革命尚未成功 不許放棄！</p>
+              <p class="text-center">誰說重考班不重視社會組，我們給你跟自然組一樣的教學資源</p>
+              <h3>介紹</h3>
+              <dl style="margin-left: 40px">
+                <dt>管理</dt>
+                <dd>淘汰舊式高壓式管理，以最嚴謹的態度執行人性化的管理，幫助學生更有效的運用每分每秒的時間，達到最好的讀書效果。</dd>
+
+                <dt>環境</dt>
+                <dd>專為重考班學生打造的讀書環境，寬廣的上課教室、VIP獨立自習空間，學生休息區還有沙發、運動器材。</dd>
+
+                <dt>診斷</dt>
+                <dd>教育界最先進的系統，利用大數據分析，找出你各科的弱點，針對式的加強。</dd>
+
+                <dt>家教</dt>
+                <dd>除了有一般的解題老師，也給你一對一的家教。針對學生不足的地方個別加強，補強真正的弱點。</dd>
+
+                <dt>多元課程</dt>
+                <dd>大學門除了給你完整的課程學習，也給你別人沒有的多元課程，幫助您完善學習歷程，讓你面對108課網，不再害怕徬徨。</dd>
+
+                <dt>二階段</dt>
+                <dd>專業輔導團隊，完整的口面試訓練，讓你在面對二階段時獲得比學測更高的分數。</dd>
+              </dl>
+            </div>
+
+            <div class="col-12 overflow-auto">
+              <h3 class="pos-sticky left-0">課表</h3>
+              <div class="curriculum">
+                <table class="curriculum">
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <span>一</span>
+                    </td>
+                    <td>
+                      <span>二</span>
+                    </td>
+                    <td>
+                      <span>三</span>
+                    </td>
+                    <td>
+                      <span>四</span>
+                    </td>
+                    <td>
+                      <span>五</span>
+                    </td>
+                    <td>
+                      <span>六</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>08:30~08:50</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                    <td>
+                      <span>晨考</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>09:00~12:10</span>
+                    </td>
+                    <td>
+                      <span>國文</span>
+                    </td>
+                    <td>
+                      <span>生物 / 地科</span>
+                    </td>
+                    <td>
+                      <span>英模</span>
+                    </td>
+                    <td>
+                      <span>數學</span>
+                    </td>
+                    <td>
+                      <span>教練課</span>
+                    </td>
+                    <td>
+                      <span>週考</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>13:50~17:00</span>
+                    </td>
+                    <td>
+                      <span>數學</span>
+                    </td>
+                    <td>
+                      <span>英文</span>
+                    </td>
+                    <td>
+                      <span>化學</span>
+                    </td>
+                    <td>
+                      <span>國模 / 國寫</span>
+                    </td>
+                    <td>
+                      <span>物理</span>
+                    </td>
+                    <td>
+                      <span>自習衝刺</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>18:40~20:00</span>
+                    </td>
+                    <td>
+                      <span>自習輔導</span>
+                    </td>
+                    <td>
+                      <span>自習輔導</span>
+                    </td>
+                    <td>
+                      <span>自習輔導</span>
+                    </td>
+                    <td>
+                      <span>自習輔導</span>
+                    </td>
+                    <td>
+                      <span>自習輔導</span>
+                    </td>
+                    <td>
+                      <span>自由到班</span>
+                    </td>
+                  </tr>
+                </tbody>
+                </table>
+                <p>*此為模擬課表</p>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <h3>師資</h3>
+              <div id="台政班content" class="row">
+                <div class="col-12 col-md-4 col-sm-6 teacher-item">
+                  <img src="static/img/teachers/紹堂500X500.gif" width="100%" alt="紹堂老師">
+                  <h4>紹堂老師</h4>
+                  <h5>高中 國文</h5>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 teacher-item">
+                  <!-- <img src="static/img/teachers/紹堂500X500.gif" width="100%" alt="紹堂老師"> -->
+                  <h4>林正堂老師</h4>
+                  <h5>高中 國模</h5>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 teacher-item">
+                  <img src="static/img/teachers/唐崴500X500.png" width="100%" alt="唐崴老師">
+                  <h4>唐崴老師</h4>
+                  <h5>高中 英文、英模</h5>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 teacher-item">
+                  <!-- <img src="static/img/teachers/" width="100%" alt="許原老師"> -->
+                  <h4>許原老師</h4>
+                  <h5>高中 數學</h5>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 teacher-item">
+                  <img src="static/img/teachers/孟烜2半身.jpg" width="100%" alt="孟烜老師">
+                  <h4>孟烜老師</h4>
+                  <h5>高中 數學</h5>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 teacher-item">
+                  <img src="static/img/teachers/高健.jpg" width="100%" alt="高健老師">
+                  <h4>高健老師</h4>
+                  <h5>高中 歷史</h5>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 teacher-item">
+                  <img src="static/img/teachers/林全.jpg" width="100%" alt="林全老師">
+                  <h4>林全老師</h4>
+                  <h5>高中 地理</h5>
+                </div>
+                <div class="col-12 col-md-4 col-sm-6 teacher-item">
+                  <img src="static/img/teachers/柯博文.png" width="100%" alt="柯博文老師">
+                  <h4>柯博文老師</h4>
+                  <h5>高中 公民</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  {% endblock %}
+  {% block script %}
+  <script type="text/javascript" src="static/js/teacherRender.js"></script>
+  <script type="text/javascript" defer>
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("main-navbar").style.backgroundColor = "#fcb527";
+      } else {
+        document.getElementById("main-navbar").style.backgroundColor = "transparent";
+      }
+    }
+    // left
+    function openContentType(evt, typeName) {
+      var i, lefTabcontent, leftTablinks;
+      lefTabcontent = document.getElementsByClassName("left-tabcontent");
+      for (i = 0; i < lefTabcontent.length; i++) {
+        lefTabcontent[i].style.display = "none";
+      }
+      leftTablinks = document.getElementsByClassName("left-tablinks");
+      for (i = 0; i < leftTablinks.length; i++) {
+        leftTablinks[i].className = leftTablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(typeName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("leftDefaultOpen").click();
+
+    // teacherPopUp
+    function myFunction() {
+      var popup = document.getElementById("teacherPopup");
+      popup.classList.toggle("show");
+    }
+
+    (function renderList() {
+      const defaultGroup = {
+        "頂醫班": [
+          {
+            name: '紹堂老師',
+            subject: '高中 國文',
+          },
+          {
+            name: '林正堂老師',
+            subject: '高中 國模',
+          },
+          {
+            name: '蔣玹老師',
+            subject: '高中 英文',
+          },
+          {
+            name: '唐崴老師',
+            subject: '高中 英模',
+          },
+          {
+            name: '許原老師',
+            subject: '高中 數學',
+          },
+          {
+            name: '林岦老師',
+            subject: '高中 物理',
+          },
+          {
+            name: '周逸老師',
+            subject: '高中 化學',
+          },
+          {
+            name: '陸謙老師',
+            subject: '高中 生物',
+          },
+          {
+            name: '林靖老師',
+            subject: '高中 地科',
+          },
+        ],
+        "醫超班": [
+          {
+            name: '紹堂老師',
+            subject: '高中 國文',
+          },
+          {
+            name: '林正堂老師',
+            subject: '高中 國模',
+          },
+          {
+            name: '唐崴老師',
+            subject: '高中 英文、英模',
+          },
+          {
+            name: '許原老師',
+            subject: '高中 數學',
+          },
+          {
+            name: '孟烜老師',
+            subject: '高中 數學',
+          },
+          {
+            name: '柯易老師',
+            subject: '高中 物理',
+          },
+          {
+            name: '張浩老師',
+            subject: '高中 化學',
+          },
+          {
+            name: '陸謙老師',
+            subject: '高中 生物',
+          },
+          {
+            name: '林靖老師',
+            subject: '高中 地科',
+          },
+        ],
+        "台政班": [
+          {
+            name: '紹堂老師',
+            subject: '高中 國文',
+          },
+          {
+            name: '林正堂老師',
+            subject: '高中 國模',
+          },
+          {
+            name: '唐崴老師',
+            subject: '高中 英文、英模',
+          },
+          {
+            name: '許原老師',
+            subject: '高中 數學',
+          },
+          {
+            name: '孟烜老師',
+            subject: '高中 數學',
+          },
+          {
+            name: '高健老師',
+            subject: '高中 歷史',
+          },
+          {
+            name: '林全老師',
+            subject: '高中 地理',
+          },
+          {
+            name: '柯博文老師',
+            subject: '高中 公民',
+          },
+        ],
+      }
+      
+      fetch('./static/data/teachers.json')
+      .then((res) => res.json())
+      .then((/** @type {unknown[]} */ data) => {
+        for (const key in defaultGroup) {
+          if (Object.hasOwnProperty.call(defaultGroup, key)) {
+            const defaultList = defaultGroup[key]
+            const list = defaultList.map((defaultTeacher) => {
+              const teacher = data.find((_teacher) => _teacher.name === defaultTeacher.name)
+              const newTeacher = {
+                ...teacher,
+                ...defaultTeacher,
+              }
+
+              return newTeacher
+            })
+            const render = list.map(tempCol).join('')
+            const content = document.getElementById(`${key}content`)
+            content.innerHTML = render
+          }
+        }
+      })
+    })()
+  </script>
+{% endblock %}

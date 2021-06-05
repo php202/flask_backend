@@ -1,0 +1,184 @@
+/**
+ * Akakaze Projects (c) by Akakaze
+ * 
+ * Akakaze Projects is licensed under a
+ * Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+ * 
+ * You should have received a copy of the license along with this
+ * work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
+ */
+
+.left-tablinks+.left-tablinks--list {
+  display: none;
+}
+
+.left-tablinks.active+.left-tablinks--list {
+  display: block;
+}
+
+.bg-primary-2 {
+  background-color: #fcb527;
+}
+
+.text-pre-wrap {
+  white-space: pre-wrap !important;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.scroll-behavior-contain {
+  overscroll-behavior: contain;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.fill-height {
+  height: 100%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-80 {
+  width: 80% !important;
+}
+
+.w-60 {
+  width: 60% !important;
+}
+
+.rounded-xl {
+  border-radius: 80px;
+}
+
+.elevation-12 {
+  box-shadow: -20px 22px 30px 0 rgb(247 197 17 / 20%);
+}
+
+.text-pre {
+  word-wrap: pre;
+}
+
+.videobox {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.videobox>iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pa-0 {
+  padding: 0;
+}
+
+.my-xl {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.ma-0 {
+  margin: 0 !important;
+}
+
+.accent {
+  animation: accentBtn 5s linear infinite;
+  font-weight: bold;
+  border: solid #FFF4BD 1px;
+  border-radius: 10px;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  box-sizing: content-box;
+  background: linear-gradient(
+    30deg,
+    transparent 20%,
+    #FFF4BD 21%,
+    #FFF4BD 25%,
+    transparent 26%,
+    transparent 28%,
+    #FFF4BD 29%,
+    #FFF4BD 35%,
+    transparent 36%,
+    transparent 70%,
+    #FFF4BD 71%,
+    #FFF4BD 75%,
+    transparent 76%,
+    transparent 78%,
+    #FFF4BD 79%,
+    #FFF4BD 85%,
+    transparent 86%
+  );
+  background-repeat: no-repeat;
+  background-size: 500px;
+}
+
+@keyframes accentBtn {
+  from {
+    background-position: 200%;
+  }
+
+  to {
+    background-position: -500%;
+  }
+}
+
+.align-center {
+  align-items: center;
+}
+
+.ml-2 {
+  margin-left: 8px !important;
+}
+
+.ml-0 {
+  margin-left: 0 !important;
+}
+
+.curriculum {
+  max-width: 100%;
+  min-width: 620px;
+}
+
+.curriculum table {
+  table-layout: fixed;
+  border-top: solid black 1px;
+  border-left: solid black 1px;
+}
+
+.curriculum td {
+  padding: 16px 8px;
+  text-align: center;
+  border-right: solid black 1px;
+  border-bottom: solid black 1px;
+}
+
+.pos-sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.left-0 {
+  left: 0;
+}

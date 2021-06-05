@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block meta1 %}
+<meta name="keywords" content="大學門教育事業體系, 最新資訊">
+<meta property="og:title" content="大學門教育事業體系 - 最新資訊" />
+<meta property="og:url" content="https://dasyuemen.com.tw/news" />
+{% endblock %}
+{% block title %}大學門教育事業體系 - 最新資訊{% endblock %}
+{% block main %}
+  <section class="container-banner">
+    <div class="container">
+      <div class="page-banner-slogan">
+        <h1>最新資訊</h1>
+        <p>掌握大學門第一手消息！</p>
+      </div>
+    </div>
+    <div class="banner-cover">
+      <img src="static/img/banner-cover.png" width="100%" alt="">
+    </div>
+  </section>
+  <div class="container">
+    <div class="breadcrumb">
+      <p><a href="./">首頁</a></p>
+      <i class="fa fa-angle-right"></i>
+      <p>最新資訊</p>
+    </div>
+    <h1 class="content-page-title">最新資訊</h1>
+  </div>
+  <section id="news-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="static/img/news/247488.jpg" width="100%" class="mx-auto">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="static/img/news/25154.jpg" width="100%" class="mx-auto">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="static/img/news/1621577963056.jpg" width="100%" class="mx-auto">
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-12 col-sm-6 news-content-item">
+          <div class="news-bg-color"></div>
+          <div class="news-main-item">
+            <a href="news-detail">
+              <img class="news-cover-img" src="static/img/news-01.jpg" width="90%" alt="">
+            </a>
+            <div class="news-main-item-title">
+              <p class="date"><i class="fa fa-calendar-check-o"></i>2020.02.01</p>
+              <a class="title" href="news-detail">高一第一次段考複習</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 news-content-item">
+          <div class="news-bg-color"></div>
+          <div class="news-main-item">
+            <a href="news-detail">
+              <img class="news-cover-img" src="static/img/news-01.jpg" width="90%" alt="">
+            </a>
+            <div class="news-main-item-title">
+              <p class="date"><i class="fa fa-calendar-check-o"></i>2020.02.01</p>
+              <a class="title" href="news-detail">高一第一次段考複習</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="event-section">
+    <div class="container">
+      <h1 class="content-page-title">最新活動</h1>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-6 event-content-item">
+          <div class="event-bg-color"></div>
+          <div class="event-main-item">
+            <a href="news-detail">
+              <img class="event-cover-img" src="static/img/news-01.jpg" width="90%" alt="">
+            </a>
+            <div class="event-main-item-title">
+              <p class="date"><i class="fa fa-calendar-check-o"></i>2020.02.01</p>
+              <a class="title" href="news-detail">高一第一次段考複習</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 event-content-item">
+          <div class="event-bg-color"></div>
+          <div class="event-main-item">
+            <a href="news-detail">
+              <img class="event-cover-img" src="static/img/news-01.jpg" width="90%" alt="">
+            </a>
+            <div class="event-main-item-title">
+              <p class="date"><i class="fa fa-calendar-check-o"></i>2020.02.01</p>
+              <a class="title" href="news-detail">高一第一次段考複習</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </section> 
+  {% endblock %}
+  {% block script %}
+  <script type="text/javascript">
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("main-navbar").style.backgroundColor = "#fcb527";
+      } else {
+        document.getElementById("main-navbar").style.backgroundColor = "transparent";
+      }
+    }
+
+    $('.student-slick').slick({
+      infinite: true,
+      dots: true,
+      arrows: false,
+      slidesToShow: 3
+    });
+  </script>
+{% endblock %}

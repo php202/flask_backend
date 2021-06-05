@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block meta1 %}
+<meta name="keywords" content="大學門教育事業體系, 線上課程">
+<meta property="og:title" content="大學門教育事業體系 - 線上課程" />
+<meta property="og:url" content="https://dasyuemen.com.tw/eLearning" />
+{% endblock %}
+{% block title %}大學門教育事業體系 - 線上課程{% endblock %}
+{% block main %}
+  <section class="container-banner">
+    <div class="container">
+      <div class="page-banner-slogan">
+        <h1>線上課程</h1>
+        <!-- <p>掌握大學門第一手消息！</p> -->
+      </div>
+    </div>
+    <div class="banner-cover">
+      <img src="static/img/banner-cover.png" width="100%" alt="">
+    </div>
+  </section>
+  <div class="container">
+    <div class="breadcrumb">
+      <p><a href="./">首頁</a></p>
+      <i class="fa fa-angle-right"></i>
+      <p>線上課程</p>
+    </div>
+    <div class="row">
+      <h1 class="col-8 content-page-title">線上課程</h1>
+    </div>
+  </div>
+  <section id="news-section">
+    <div class="container">
+      <div class="row">
+        <div class="col col-md-8 mx-auto">
+          <img
+            src="static/img/eLearning/大學門__03.jpg"
+            width="100%"
+            class="mx-auto d-block"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="booking" style="padding-top: 106px">
+    <form id="form">
+      <div class="container">
+        <div class="row more-link-title text-center">
+          <h1>預約試聽</h1>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 from-item">
+            <label for="name" class="form-label">姓名 <span class="required-icon">*</span></label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="姓名">
+          </div>
+          <div class="col-12 col-sm-6 from-item">
+            <label for="phone" class="form-label">手機 <span class="required-icon">*</span></label>
+            <input type="text" inputmode="tel" class="form-control" id="phone" name="phone" placeholder="手機">
+          </div>
+          <div class="col-12 col-sm-6 from-item">
+            <label for="schoolName" class="form-label">學校 <span class="required-icon">*</span></label>
+            <input type="text" class="form-control" id="schoolName" name="schoolName" placeholder="學校">
+          </div>
+          <div class="col-12 col-sm-6 from-item">
+            <label for="branch" class="form-label">詢問分校 <span class="required-icon">*</span></label>
+            <select id="branch" class="form-select col-3" name="branch">
+              <option selected>請選擇...</option>
+              <option>豐原班</option>
+              <option>文華班</option>
+              <option>今華班</option>
+              <option>水利班</option>
+              <option>育才班</option>
+              <option>台中班</option>
+              <option>彰化班</option>
+              <option>員林班</option>
+            </select>
+          </div>
+          <div class="col-12 from-item">
+            <label for="suggestion" class="form-label">其他問題與意見</label>
+            <textarea class="form-control" id="suggestion" rows="5" name="suggestion"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="submit-btn">
+        <button>送出</button>
+      </div>
+    </form>
+  </section>
+  {% endblock %}
+  {% block script %}
+  <script type="text/javascript">
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("main-navbar").style.backgroundColor = "#fcb527";
+      } else {
+        document.getElementById("main-navbar").style.backgroundColor = "transparent";
+      }
+    }
+
+    $('#form').submit((event) => {
+      event.preventDefault()
+      const url = 'https://dasyuemen.com.tw/api/appointment-forms'
+      const method = 'POST'
+      const form = new FormData(event.target)
+      const data = [Object.fromEntries(form.entries())]
+      const body = JSON.stringify(data)
+      const headers = new Headers()
+      headers.set('Content-Type', 'application/json')
+      fetch(url, {
+        method,
+        body,
+        headers,
+      }).then((response) => {
+        if (response.ok && response.status === 204) {
+          alert('預約成功！')
+          return
+        }
+        alert('傳送錯誤！')
+      })
+    })
+
+    $('.student-slick').slick({
+      infinite: true,
+      dots: true,
+      arrows: false,
+      slidesToShow: 3
+    });
+  </script>
+{% endblock %}

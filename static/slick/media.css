@@ -1,0 +1,511 @@
+@media (max-width: 992px) {
+    .navbar-expand-lg .navbar-nav a {
+        padding: 0px 10px;
+        font-size: 14px;
+    }
+    .slogan {
+        width: 40%;
+        left: 30%;
+    }
+    .banner {
+        background-size: 88%;
+        background-position-x: 460px;
+        min-height: 500px;
+    }
+    .news-item-list .news-item:first-child {
+        border-radius: 100px;
+    }
+    .news-item {
+        padding: 30px 50px;
+    }
+    .news-item p {
+        max-height: 50px;
+        overflow: hidden;
+    }
+    .index-about-item {
+        padding: 50px 50px;
+    }
+    .container-banner {
+        height: 350px;
+    }
+    .news-bg-color, .event-bg-color {
+        width: 80%;
+        height: 300px;
+    }
+    #event-section {
+        margin-top: 100px;
+    }
+    .popup .popuptext {
+        padding: 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 60px;
+    }
+    .navbar-toggler {
+        color: #fff;
+    }
+    .main-navbar {
+        background-color: #fcb526;
+    }
+    .banner {
+        min-height: 460px;
+        background-position-x: 300px;
+        background-position-y: 0px;
+    }
+    .slogan {
+        top: 60%;
+    }
+    .slogan p {
+        margin-bottom: 15px;
+    }
+    .sns-icon {
+        top: 58%;
+        left: 6%;
+    }
+    .award-list .slick-list {
+        margin-left: 60px;
+    }
+    .student-item {
+        margin-right: 10px;
+    }
+    .student-item h5 {
+        font-size: 12px;
+    }
+    .student-item h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .student-item h6 {
+        font-size: 16px;
+    }
+    .news-item {
+        padding: 40px 30px;
+    }
+    .news-item h4 {
+        font-size: 18px;
+    }
+    .news-item p {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .school-item h5 {
+        font-size: 14px;
+    }
+    .school-item-content img {
+        width: 40px;
+    }
+    .slogan-section {
+        padding: 80px 0px
+    }
+    .news-bg-color, .event-bg-color {
+        width: 88%;
+        height: 220px;
+        margin-left: 50px;
+        border-radius: 0px 100px 0px 0px;
+    }
+    .news-main-item-title, .event-main-item-title {
+        margin-top: 20px;
+        margin-left: 60px;
+    }
+    .news-main-item img, .event-main-item img {
+        border-radius: 0px 0px 0px 100px;
+    }
+    .school-content {
+        background-size: 80%;
+        background-position-y: 250px;
+    }
+    .school-map {
+        border-radius: 100px;
+        margin-left: 50px;
+    }
+    .school-item-detail-info {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding-left: 60px;
+    }
+    .teacher-item img {
+        border-radius: 60px;
+    }
+    .popup .popuptext {
+        padding: 30px 20px;
+        font-size: 14px;
+        border-radius: 60px;
+    }
+    .popup-icon {
+        right: 25px;
+    }
+    .left-tab button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+        margin-top: 50px;
+    }
+    .sns-icon {
+        display: none;
+    }
+    .banner {
+        min-height: 800px;
+        background-size: 120%;
+        background-position-x: 0px;
+        background-position-y: 0px;
+        border-radius: 0px;
+    }
+    .slogan {
+        top: 65%;
+        width: 80%;
+        left: 10%;
+        transform: none;
+        margin: 0 auto;
+    }
+    .more-link-item p {
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+    .award-list .slick-list {
+        margin-left: 20px;
+    }
+    .student-item {
+        margin-right: 0px;
+    }
+    .index-about {
+        margin: 50px 0px;
+    }
+    .index-about-item {
+        margin: 0 auto;
+        border: none;
+        padding: 0;
+        width: 80%;
+    }
+    .index-about .col-sm-12 {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+    .news-item video {
+        width: 100%!important;
+    }
+    .index-about-content {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .index-about-content a {
+        width: 100%;
+        text-align: center;
+    }
+    .news-main-item, .event-main-item {
+        left: 0;
+    }
+    .news-bg-color, .event-bg-color {
+        width: 98%;
+        height: 180px;
+        margin-left: 20px;
+        border-radius: 0px 100px 0px 0px;
+    }
+    .news-main-item-title .date, .event-main-item-title .date {
+        font-size: 14px;
+    }
+    .news-main-item-title .title, .event-main-item-title .title {
+        font-size: 18px;
+    }
+    .about-img .container-fluid {
+        margin-top: 50px;
+    }
+    .about-content .container {
+        width: 90%;
+    }
+    .about-img .center img {
+        padding: 10px 10px;
+        border-radius: 50px;
+    }
+    .about-content .container h1 {
+        margin-bottom: 30px;
+    }
+    .about-content .container-fluid h1 {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 80px;
+        padding: 0px;
+    }
+    .school-map {
+        margin-left: 0px;
+    }
+    .school-map iframe {
+        border-radius: 0px!important; 
+        height: 350px;
+    }
+    .school-content {
+        background-image: none;
+    }
+    .school-content-info {
+        top: 25%;
+        left: 15%;
+        padding: 30px;
+        border-radius: 20px;
+    }
+    .school-detail-content {
+        margin-bottom: 50px;
+    }
+    .school-content-info h4,.school-item-detail-info h4 {
+        font-size: 20px;
+    }
+    .school-item-detail-info p {
+        font-size: 16px;
+    }
+    .school-address {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .school-phone {
+        margin-bottom: 10px;
+    }
+    .school-phone a,.school-content-info ul li,.school-item-detail-info ul li{
+        font-size: 14px;
+    }
+    .school-item-detail-info {
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 375px) {
+    .navbar-expand-lg .navbar-nav a {
+        padding: 10px 0px;
+        font-size: 18px;
+        border-bottom: 1px solid;
+    }
+    .main-navbar {
+        background-color: #fcb526!important;
+        box-shadow: 0px 5px 20px 0 rgb(138 95 0 / 30%);
+    }
+    .banner {
+        min-height: 700px;
+        background-size: 120%;
+        background-position-x: -20px;
+        background-position-y: 35px;
+    }
+    .slogan {
+        top: 55%;
+        width: 80%;
+        left: 10%;
+        transform: none;
+        margin: 0 auto;
+    }
+    .slogan a {
+        width: 100%;
+        text-align: center;
+    }
+    .award-list-title {
+        padding: 30px 0px 30px 0px;
+    }
+    .news-list-title {
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+    .news-item-list {
+        border: none;
+        border-radius: 0;
+        margin: 0px 10px;
+    }
+    .news-item-list .news-item:first-child {
+        border-radius: 0px;
+        background-color: transparent;
+        color: #1b1b1b;
+    }
+    .news-item-list .news-item:first-child a {
+        font-size: 14px;
+        color: #000;
+    }
+    .news-item {
+        border-radius: 0px;
+        padding: 20px 0px;
+        border-bottom: 1px solid #fcb526;
+    }
+    .school-list {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .school-list-title {
+        width: 100%;
+    }
+    .school-group {
+        width: 100%;
+        margin: 30px auto;
+        text-align: center;
+    }
+    .more-link {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .more-link-title {
+        margin-bottom: 30px;
+    }
+    .more-link-item p {
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    footer {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .more-link-item img {
+        width: 50%;
+    }
+    .footer-content {
+        margin-top: 50px;
+        padding-top: 50px;
+    }
+    .footer-content, .footer-link-group {
+        text-align: center;
+    }
+    .footer-logo-group p {
+        margin-bottom: 0px;
+    }
+    .footer-link-group p {
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
+    .footer-copyright {
+        margin-top: 30px;
+    }
+    .container-banner {
+        padding-top: 300px;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 150%;
+        background-color: #eee;
+        background-position-y: 80px;
+        margin-bottom: 30px;
+    }
+    .page-banner-slogan {
+        top: 65%;
+        width: 90%;
+    }
+    .banner-cover img {
+        display: none;
+    }
+    .breadcrumb {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .breadcrumb i {
+        padding: 0px 5px;
+    }
+    .breadcrumb p {
+        margin-bottom: 15px;
+    }
+    .content-page-title {
+        margin-bottom: 30px;
+        font-size: 32px;
+        letter-spacing: 0px;
+    }
+    .news-content-item, .event-content-item {
+        margin-bottom: 50px;
+    }
+    .news-bg-color, .event-bg-color {
+        height: 225px;
+    }
+    #event-section {
+        margin-top: 50px;
+    }
+    .news-detail-date {
+        text-align: left;
+    }
+    .news-detail-content {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .about-content .container {
+        padding: 0px;
+    }
+    .about-content p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .about-content .container h1 {
+        margin-bottom: 20px;
+    }
+    .slogan-section {
+        padding: 50px 0px;
+    }
+    .slogan-section h3 {
+        line-height: 1.5;
+        font-size: 18px;
+    }
+    .about-img .center img {
+        padding: 30px 24px;
+        border-radius: 80px;
+    }
+    .about-img .container-fluid {
+        margin-top: 30px;
+    }
+    .about-content .container-fluid h1 {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    .booking-required {
+        line-height: 32px;
+    }
+    .from-item {
+        margin-bottom: 20px;
+    }
+    .submit-btn {
+        margin: 30px auto;
+    }
+    .select-title {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+    .select-school-btn {
+        font-size: 16px;
+        width: 150px;
+    }
+    .school-content-info {
+        top: 23%;
+        left: 0;
+        margin: 0 20px;
+    }
+    .school-detail-content {
+        margin-bottom: 0px;
+    }
+    .school-item-detail-info {
+        padding-left: calc(var(--bs-gutter-x)/ 2);
+        margin-top: 0px;
+    }
+    .teacher-item img {
+        border-radius: 80px;
+    }
+    .popup .popuptext {
+        padding: 60px;
+        font-size: 16px;
+        border-radius: 80px;
+    }
+    .top-tab button.active {
+        padding: 10px 80px;
+    }
+    .top-tab button {
+        padding: 10px 50px;
+    }
+    .tabcontent {
+        margin-top: 30px;
+    }
+    .left-tab {
+        margin-bottom: 30px;
+    }
+    .left-tab button,.left-tab button.active {
+        text-align: center;
+        width: fit-content;
+        float: left;
+        border-radius: 20px;
+        padding: 20px 50px;
+        margin: 10px 18px;
+    }
+}

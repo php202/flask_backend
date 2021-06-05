@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block meta1 %}
+  <meta name="keywords" content="大學門教育事業體系">
+  <meta property="og:title" content="大學門教育事業體系" />
+  <meta property="og:url" content="https://dasyuemen.com.tw/news-detail" />
+{% endblock %}
+{% block title %}大學門教育事業體系{% endblock %}
+{% block main %}
+  <section class="container-banner">
+    <div class="container">
+      <div class="page-banner-slogan">
+        <h1>最新資訊</h1>
+        <p>掌握大學門第一手消息！</p>
+      </div>
+    </div>
+    <div class="banner-cover">
+      <img src="static/img/banner-cover.png" width="100%" alt="">
+    </div>
+  </section>
+  <div class="container">
+    <div class="breadcrumb">
+      <p><a href="./">首頁</a></p>
+      <i class="fa fa-angle-right"></i>
+      <p><a href="news">最新資訊</a></p>
+      <i class="fa fa-angle-right"></i>
+      <p>高一第一次段考複習</p>
+    </div>
+    <div class="row">
+      <h1 class="col-12 col-sm-8 content-page-title">高一第一次段考複習</h1>
+      <p class="col-12 col-sm-4 news-detail-date"><i class="fa fa-calendar-check-o"></i>2020.02.01</p>
+      <p class="col-12 news-detail-content">如果你用國中的態度來面對高中的課程, 馬上就要跌一大跤!</p>
+      <img src="static/img/news-ad.jpg" alt="">
+    </div>
+  </div>
+{% endblock %}
+{% block script %}
+  <script type="text/javascript">
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("main-navbar").style.backgroundColor = "#fcb527";
+      } else {
+        document.getElementById("main-navbar").style.backgroundColor = "transparent";
+      }
+    }
+  </script>
+{% endblock %}

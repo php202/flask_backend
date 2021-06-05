@@ -1,0 +1,153 @@
+{% extends "base.html" %} 
+{% block meta1 %}
+  <meta name="keywords" content="大學門教育事業體系, 師資介紹">
+  <meta property="og:title" content="大學門教育事業體系 - 師資介紹" />
+  <meta property="og:url" content="https://dasyuemen.com.tw/teacher" />
+  {% endblock %}
+  {% block title %}大學門教育事業體系 - 師資介紹{% endblock %}
+  {% block main %}
+  <section class="container-banner">
+    <div class="container">
+      <div class="page-banner-slogan">
+        <h1>師資介紹</h1>
+        <p>大學門高中部給你最好的授課老師！</p>
+      </div>
+    </div>
+    <div class="banner-cover">
+      <img src="static/img/banner-cover.png" width="100%" alt="">
+    </div>
+  </section>
+  <div class="container">
+    <div class="breadcrumb">
+      <p><a href="./">首頁</a></p>
+      <i class="fa fa-angle-right"></i>
+      <p>師資介紹</p>
+    </div>
+    <h1 class="content-page-title">師資介紹</h1>
+  </div>
+  <section class="teacher-content">
+    <div class="container-fluid">
+      <div class="top-tab">
+        <button class="tablinks" onclick="openType(event, '重考班')" id="defaultOpen">重考班</button>
+        <button class="tablinks" onclick="openType(event, '家教班')">家教班</button>
+      </div>
+      <div id="重考班" class="tabcontent">
+        <div class="row mr-0">
+          <div class="col-12 col-sm-3 left-tab">
+            <button class="left-tablinks" onclick="openContentType(event, '國文')" id="leftDefaultOpen">
+              國文
+            </button>
+            <button class="left-tablinks" onclick="openContentType(event, '英文')" id="leftDefaultOpen">
+              英文
+            </button>
+            <button class="left-tablinks" onclick="openContentType(event, '數學')" id="leftDefaultOpen">
+              數學
+            </button>
+            <button class="left-tablinks" onclick="openContentType(event, '自然')" id="leftDefaultOpen">
+              自然
+            </button>
+            <button class="left-tablinks" onclick="openContentType(event, '社會')" id="leftDefaultOpen">
+              社會
+            </button>
+          </div>
+          <div id="國文" class="col-12 col-sm-9 left-tabcontent">
+            <div id="國文content" class="row"></div>
+          </div>
+          <div id="英文" class="col-12 col-sm-9 left-tabcontent">
+            <div id="英文content" class="row"></div>
+          </div>
+          <div id="數學" class="col-12 col-sm-9 left-tabcontent">
+            <div id="數學content" class="row"></div>
+          </div>
+          <div id="自然" class="col-12 col-sm-9 left-tabcontent">
+            <div id="自然content" class="row"></div>
+          </div>
+          <div id="社會" class="col-12 col-sm-9 left-tabcontent">
+            <div id="社會content" class="row"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="家教班" class="tabcontent">
+        <h3>家教班內容</h3>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
+  {% block script %}
+  <script type="text/javascript" defer>
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("main-navbar").style.backgroundColor = "#fcb527";
+      } else {
+        document.getElementById("main-navbar").style.backgroundColor = "transparent";
+      }
+    }
+
+    // Top tab
+    function openType(evt, type) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(type).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("defaultOpen").click();
+    // left
+    function openContentType(evt, typeName) {
+      var i, lefTabcontent, leftTablinks;
+      lefTabcontent = document.getElementsByClassName("left-tabcontent");
+      for (i = 0; i < lefTabcontent.length; i++) {
+        lefTabcontent[i].style.display = "none";
+      }
+      leftTablinks = document.getElementsByClassName("left-tablinks");
+      for (i = 0; i < leftTablinks.length; i++) {
+        leftTablinks[i].className = leftTablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(typeName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    document.getElementById("leftDefaultOpen").click();
+
+    (function renderList() {
+      fetch('./static/data/teachers.json')
+      .then((res) => res.json())
+      .then((/** @type {unknown[]} */ data) => {
+        const group = data.reduce((pv, cv) => {
+          const key = cv.group
+          if (!Array.isArray(pv[key])) pv[key] = []
+
+          const imageUrl = cv.imageUrl ? new URL(cv.imageUrl, window.location.origin).toString() : null
+          const obj = {
+            ...cv,
+            imageUrl,
+          }
+          pv[key].push(obj)
+
+          return pv
+        }, {})
+
+        for (const key in group) {
+          if (Object.hasOwnProperty.call(group, key)) {
+            const list = group[key]
+            const render = list.map(tempCol).join('')
+            const content = document.getElementById(`${key}content`)
+            content.innerHTML = render
+          }
+        }
+      })
+    })()
+  </script>
+{% endblock %}
