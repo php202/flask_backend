@@ -1,0 +1,26 @@
+<section id="idea" class="slogan-section">
+    <div class="container">
+    <h3>
+    {% if current_user.is_authenticated %}
+    <form method="post" action="/{% for nav in navs %}{% if url_for(request.endpoint)[1:] == nav[4] %}{{ nav[4] }}{% endif %}{%endfor%}
+#{{mains[4][0]}}">
+    <textarea class="textarea" id="{{mains[4][0]}}" name="{{mains[4][0]}}">{{mains[4][2]}}</textarea>
+    <input type="submit" value="修改">
+    </form>
+    {% else %}
+    {{mains[4][2]}}
+    {% endif %}   
+    <br>
+    {% if current_user.is_authenticated %}
+    <form method="post" action="/{% for nav in navs %}{% if url_for(request.endpoint)[1:] == nav[4] %}{{ nav[4] }}{% endif %}{%endfor%}
+#{{mains[5][0]}}">
+    <textarea class="textarea" id="{{mains[5][0]}}" name="{{mains[5][0]}}">{{mains[5][2]}}</textarea>
+    <input type="submit" value="修改">
+    </form>
+    {% else %}
+    {{mains[5][2]}}
+    {% endif %}
+    </h3>
+    </div>
+  </section>
+

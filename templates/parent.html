@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block meta1 %}
+  <meta name="keywords" content="大學門教育事業體系, 學生家長專區">
+  <meta property="og:title" content="大學門教育事業體系 - 學生家長專區" />
+  <meta property="og:url" content="https://dasyuemen.com.tw/parents" />  
+{% endblock %}
+{% block main %}
+  <section class="container-banner">
+    <div class="container">
+      <div class="page-banner-slogan">
+        <h1>學生家長專區</h1>
+        <p>大學門專屬App</p>
+        <p>大學門補帶課程</p>
+        <p>大學門線上課程</p>
+      </div>
+    </div>
+    <div class="banner-cover">
+      <img src="static/img/banner-cover.png" width="100%" alt="">
+    </div>
+  </section>
+  <div class="container">
+    <div class="breadcrumb">
+      <p><a href="./">首頁</a></p>
+      <i class="fa fa-angle-right"></i>
+      <p>{% for nav in navs %}{% if url_for(request.endpoint)[1:] == nav[4] %}{{ nav[3] }}{% endif %}{% endfor %}</p>
+    </div>
+    <h1 id="shenlearn" class="content-page-title">大學門專屬App</h1>
+  </div>
+  <section id="news-section">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+        {% if current_user.is_authenticated %}
+        <form action="/parent" enctype='multipart/form-data' method='POST'>
+        <input type="file" id="{{parentImg[0][0]}}" name="{{parentImg[0][1]}}" style="margin-top:20px;"/>
+        <br>
+        <input type="submit" value="上傳" class="button-new" style="margin-top:15px;"/>
+        </form>
+        {% endif %}
+        <a href="http://hyperurl.co/dasyuemen"><img src="static/img/{{parentImg[0][0]}}.jpg" width="100%">
+        </div>
+      </div>
+  </section>
+{% endblock %}
+  
+{% block script %}
+  <script type="text/javascript">
+
+    $('.student-slick').slick({
+      infinite: true,
+      dots: true,
+      arrows: false,
+      slidesToShow: 3
+    });
+  </script>
+{% endblock %}

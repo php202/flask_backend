@@ -8,7 +8,7 @@
  * work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
  */
 
-.left-tablinks+.left-tablinks--list {
+ .left-tablinks+.left-tablinks--list {
   display: none;
 }
 
@@ -175,6 +175,10 @@
   position: sticky;
 }
 
+.pos-relative {
+  position: relative;
+}
+
 .top-0 {
   top: 0;
 }
@@ -182,3 +186,82 @@
 .left-0 {
   left: 0;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 10;
+  overscroll-behavior: contain;
+  overflow-y: auto;
+  display: none;
+}
+
+/* .overlay.show {
+  opacity: 1;
+} */
+
+.alertDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  overscroll-behavior: contain;
+  overflow-y: auto;
+  transition: transform .3s;
+  transform-origin: center center;
+  transform: scale(0);
+}
+
+.alertDialog.show {
+  transform: scale(1);
+}
+
+.alertDialog > .alertDialog-wrap {
+  position: absolute;
+  padding: 20px 44px 20px 20px;
+  inset: 6% auto;
+  min-width: 100%;
+}
+
+.alertDialog > .alertDialog-wrap > .display {
+  height: 100%;
+  width: fit-content;
+  margin: auto;
+}
+
+.alertDialog > .alertDialog-wrap > .display > img {
+  object-fit: contain;
+  /* max-width: 100%; */
+  height: 100%;
+  max-height: 100%;
+}
+
+.alertDialog > .alertDialog-wrap > .display > .btn-close-icon {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .3);
+}
+
+.alertDialog > .alertDialog-wrap > .display > .btn-close-icon:hover {
+  background-color: rgba(255, 255, 255, .4);
+}
+
+.alertDialog > .alertDialog-wrap > .display > .btn-close-icon:active {
+  background-color: rgba(255, 255, 255, .6);
+}
+
+.alertDialog > .alertDialog-wrap > .display > .btn-close-icon > svg {
+  fill: rgba(64, 64, 64, 1);
+}
+.pointer {cursor: pointer;}

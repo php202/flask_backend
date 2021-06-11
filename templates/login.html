@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+<meta name="keywords" content="大學門教育事業體系, 關於我們">
+<meta property="og:title" content="大學門教育事業體系 - 關於我們" />
+<meta property="og:url" content="https://dasyuemen.com.tw/about" />
+
+
+{% block main %}
+  <section class="container-banner">
+    <div class="container">
+      <!-- <div class="page-banner-slogan">
+                <h1>分校介紹</h1>
+                <p>專辨高中升大學專業補習班 選擇大學門讓你在高中生涯競爭展翅高飛</p>
+            </div> -->
+    </div>
+    <div class="banner-cover">
+      <img src="static/img/banner-cover.png" width="100%" alt="">
+    </div>
+  </section>
+
+  <section class="about-content">
+  <div class="container">
+    <!-- <p class="text-pre-wrap"> -->
+  <form method="post" action="/login">
+    <div class="form-group row">
+      <label for="user_id" class="col-2 offset-1 col-form-label">帳號:</label>
+      <div class="col-3">
+      <input type="text" class="form-control" id="user_id" name="user_id" placeholder="輸入帳號">
+      <small class="form-text">提示： 管理員帳號</small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="password" class="col-2 offset-1 col-form-label">密碼:</label>
+      <div class="col-3">
+      <input type="password" class="form-control" id="password" name="password" placeholder="輸入密碼">
+      <small class="form-text">提示： 若忘記密碼，通知工程人員重設</small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="ccol-1 offset-1 col-form-label">
+      <button type="submit" class="btn btn-dirty-purple">登入</button>
+      <br><br><br><br><br><br><br><br>
+      </div>
+    </div>
+  </form>
+  </div>
+  </section>
+  <section class="about-img">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="center">
+        {% for img in schImgs %}<div><img src="static/img/school/{{img[0]}}.jpg" width="100%" alt=""></div>{% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block script %}
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.center').slick({
+        centerMode: true,centerPadding: '0px',autoplay: true,autoplaySpeed: 3000,slidesToShow: 3,responsive: [{breakpoint: 768,
+        settings: {arrows: false,dots: true,centerMode: true,centerPadding: '20px',slidesToShow: 3}},
+        {breakpoint: 480,settings: {arrows: false,dots: true,centerMode: true,centerPadding: '40px',slidesToShow: 1}}]});});
+  </script>
+{% endblock %}
+

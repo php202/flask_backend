@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,11 +26,12 @@
   <link rel="stylesheet" type="text/css" href="static/slick/slick.css" />
   <link rel="stylesheet" type="text/css" href="static/slick/slick-theme.css" />
   <link rel="stylesheet" href="/static/slick/style.css">
-  <link rel="stylesheet" href="/static/slick/style2.css">
+  <link rel="stylesheet" href="/static/slick/style2.css?123">
   <link rel="stylesheet" href="/static/slick/media.css">
   <link rel="stylesheet" href="/static/slick/new-style.css">
   <!-- title可供更改的部分 -->
-  <title>{% block title %}{% endblock %}</title>
+  
+  <title> {% for nav in navs %}{% if url_for(request.endpoint)[1:] == nav[4] %}{{ nav[3] }}{% endif %}{% endfor %}</title>
 </head>
 
 <body>
@@ -44,16 +44,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav align-center">
-          <a href="eLearning" class="accent">線上課程</a>
-          <a href="about">關於我們</a>
-          <a href="news">最新資訊</a>
-          <!-- <a tw/abouthref="class-A">高中全科班</a> -->
-          <a href="class-A">高中家教班</a>
-          <a href="class-B">高中重考班</a>
-          <a href="school">分校介紹</a>
-          <a href="teacher">師資介紹</a>
-          <a href="parents">學生家長專區</a>
-          <a href="./#booking">預約試聽</a>
+          {% for nav in navs if nav[4]!='' %}<a href="{{ nav[4] }}"{% if url_for(request.endpoint)[1:] == nav[4] %} class="accent" {% endif %}>{{ nav[3] }}</a>{% endfor %}
         </div>
       </div>
     </div>
@@ -68,48 +59,50 @@
         <div class="col-12 col-lg-4 footer-logo-group">
           <div class="row">
             <div class="col-8">
-              <img src="static/img/footer-logo.png" height="60" alt="">
+            <a href="./"><img src="static/img/footer-logo.png" height="60" alt=""></a>
               <p>大學門教育事業體系</p>
               <p>DA SYUE MEN EDUCATIONAL<br>INSTITUTION GROUPS</p>
             </div>
             <div class="col-4">
-              <img src="static/img/app_qrcode.jpg" width="100%" alt="" class="ma-0">
+            <a href="http://hyperurl.co/dasyuemen"><img src="static/img/app_qrcode.jpg" width="100%" alt="" class="ma-0"></a>
               <p style="margin-top: 33px;">掃描下載大學門專屬App</p>
             </div>
           </div>
         </div>
         <div class="col-12 col-sm-3 col-lg-2 footer-link-group">
           <p>關於大學門</p>
-          <a href="#">大學門的故事</a>
-          <a href="#">學生風雲榜</a>
+          <a href="/about#abouttop">大學門的故事</a>
+          <a href="/#gold">學生風雲榜</a>
         </div>
         <div class="col-12 col-sm-3 col-lg-2 footer-link-group">
           <p>最新資訊</p>
-          <a href="#">最新消息</a>
-          <a href="#">最新活動</a>
+          <a href="/news#newstop">最新消息</a>
+          <a href="/news#newstop#">最新活動</a>
         </div>
         <div class="col-12 col-sm-3 col-lg-2 footer-link-group">
           <p>分校介紹</p>
-          <a href="#">育才重考班</a>
-          <a href="#">彰化班</a>
-          <a href="#">員林班</a>
-          <a href="#">水利班</a>
-          <a href="#">文華班</a>
-          <a href="#">豐原班</a>
-          <a href="#">台中班</a>
+          {% for sch in schs %}
+          <a href="/school#{{sch[1]}}">{{sch[1]}}</a>
+          {% endfor %}
         </div>
         <div class="col-12 col-sm-3 col-md-2 footer-link-group">
           <p>關注我們</p>
-          <a href="#">大學門的故事</a>
-          <a href="#">學生風雲榜</a>
+          <a href="/about#abouttop">大學門的故事</a>
+          <a href="./#gold">學生風雲榜</a>
         </div>
         <div class="col-12 footer-copyright">
-          <p>Copyright © 2021 大學門教育事業體系 - 版權所有</p>
+          <p>Copyright © 2021 大學門教育事業體系 - 
+          {% if current_user.is_authenticated %}
+          <a href="/logout" style="color:black;text-decoration:none;">版權所有</a>
+          {% else %}
+          <a href="/login" style="color:black;text-decoration:none;">版權所有</a>
+          {% endif %}
+          </p>
         </div>
       </div>
     </div>
   </footer>
-
+  {% block footer %}{% endblock %}
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
     integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
   </script>
@@ -119,6 +112,34 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="static/slick/slick.min.js"></script>
+  
+  <script>
+    window.onscroll = function () {scrollFunction()};
+    function scrollFunction() {if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      document.getElementById("main-navbar").style.backgroundColor = "#fcb527";} else {
+      document.getElementById("main-navbar").style.backgroundColor = "transparent";
+      }}
+    var modalparent = document.getElementsByClassName("modal");
+    var modal_btn_multi = document.getElementsByClassName("myBtn");
+    var span_close_multi = document.getElementsByClassName("close"); 
+    function setDataIndex() {
+    for (i = 0; i < modal_btn_multi.length; i++){
+    modal_btn_multi[i].setAttribute('data-index', i);
+    modalparent[i].setAttribute('data-index', i);
+    span_close_multi[i].setAttribute('data-index', i);}}
+    for (i = 0; i < modal_btn_multi.length; i++){
+    modal_btn_multi[i].onclick = function() {
+    var ElementIndex = this.getAttribute('data-index');
+    modalparent[ElementIndex].style.display = "block";};
+    span_close_multi[i].onclick = function() {
+    var ElementIndex = this.getAttribute('data-index');
+    modalparent[ElementIndex].style.display = "none";};}
+    window.onload = function() {setDataIndex();};
+    window.onclick = function(event) {
+    if (event.target === modalparent[event.target.getAttribute('data-index')]) {
+    modalparent[event.target.getAttribute('data-index')].style.display = "none";}};
+    
+    </script>
 
   {% block script %}{% endblock %}
 </body>

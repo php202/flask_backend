@@ -4,12 +4,11 @@
 <meta property="og:title" content="大學門教育事業體系 - 最新資訊" />
 <meta property="og:url" content="https://dasyuemen.com.tw/news" />
 {% endblock %}
-{% block title %}大學門教育事業體系 - 最新資訊{% endblock %}
 {% block main %}
   <section class="container-banner">
     <div class="container">
       <div class="page-banner-slogan">
-        <h1>最新資訊</h1>
+        <h1>{% for nav in navs %}{% if url_for(request.endpoint)[1:] == nav[4] %}{{ nav[3] }}{% endif %}{% endfor %}</h1>
         <p>掌握大學門第一手消息！</p>
       </div>
     </div>
@@ -18,26 +17,57 @@
     </div>
   </section>
   <div class="container">
-    <div class="breadcrumb">
+    <div id="newstop" class="breadcrumb">
       <p><a href="./">首頁</a></p>
       <i class="fa fa-angle-right"></i>
-      <p>最新資訊</p>
+      <p>{% for nav in navs %}{% if url_for(request.endpoint)[1:] == nav[4] %}{{ nav[3] }}{% endif %}{% endfor %}</p>
+     
+      {% if current_user.is_authenticated %}
+      <i class="fa fa-angle-right"></i>
+      <p><button class="myBtn">新增消息</button>
+      <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <form action="/news" enctype='multipart/form-data' method='POST'>
+      <div class="modal-content">
+        <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>新增消息</h2>
+        </div>
+      <div class="modal-body">
+      <div class="container">
+      <div class="row">
+      <div class="col col-md-8 mx-auto">
+      <textarea class="textarea" style="height: 50px"  name="mainnews" placeholder="主標"></textarea>
+      <textarea class="textarea"  name="subnews" placeholder="副標"></textarea>
+      <input type="file" name="{{navs[2][0]}}" style="margin-top:20px;"/></input>
+      </div>
+      </div>
+      </div>
+      </div>
+        <div class="modal-footer">
+        <h3><input type="submit" value="上傳" class="button-new" style="margin-top:15px;"/></h3>
+        </div>
+      </div>
+      </form>
+      </div>
+
+           
+
+
+      {% endif %}
+      
     </div>
-    <h1 class="content-page-title">最新資訊</h1>
+    <h1 class="content-page-title">{% for nav in navs %}{% if url_for(request.endpoint)[1:] == nav[4] %}{{ nav[3] }}{% endif %}{% endfor %}</h1>
   </div>
   <section id="news-section">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-4">
-          <img src="static/img/news/247488.jpg" width="100%" class="mx-auto">
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <img src="static/img/news/25154.jpg" width="100%" class="mx-auto">
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <img src="static/img/news/1621577963056.jpg" width="100%" class="mx-auto">
-        </div>
+      {% for new in news%}
+      <div class="col-12 col-md-6 col-lg-4">
+      <a href="./news-detail#{{new[0]}}"><img src="static/img/{{new[0]}}.jpg" width="100%" class="mx-auto"></a>
       </div>
+      {% endfor %}
+       
       <!-- <div class="row">
         <div class="col-12 col-sm-6 news-content-item">
           <div class="news-bg-color"></div>
@@ -102,17 +132,7 @@
   {% endblock %}
   {% block script %}
   <script type="text/javascript">
-    window.onscroll = function () {
-      scrollFunction()
-    };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementById("main-navbar").style.backgroundColor = "#fcb527";
-      } else {
-        document.getElementById("main-navbar").style.backgroundColor = "transparent";
-      }
-    }
+ 
 
     $('.student-slick').slick({
       infinite: true,
@@ -121,4 +141,5 @@
       slidesToShow: 3
     });
   </script>
+  
 {% endblock %}

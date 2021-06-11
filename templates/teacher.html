@@ -4,12 +4,11 @@
   <meta property="og:title" content="大學門教育事業體系 - 師資介紹" />
   <meta property="og:url" content="https://dasyuemen.com.tw/teacher" />
   {% endblock %}
-  {% block title %}大學門教育事業體系 - 師資介紹{% endblock %}
   {% block main %}
   <section class="container-banner">
     <div class="container">
       <div class="page-banner-slogan">
-        <h1>師資介紹</h1>
+        <h1>{% for nav in navs %}{% if url_for(request.endpoint)[1:] == nav[4] %}{{ nav[3] }}{% endif %}{% endfor %}</h1>
         <p>大學門高中部給你最好的授課老師！</p>
       </div>
     </div>
@@ -21,72 +20,128 @@
     <div class="breadcrumb">
       <p><a href="./">首頁</a></p>
       <i class="fa fa-angle-right"></i>
-      <p>師資介紹</p>
+      <p>{% for nav in navs %}{% if url_for(request.endpoint)[1:] == nav[4] %}{{ nav[3] }}{% endif %}{% endfor %}</p>
+
+
+      {% if current_user.is_authenticated %}
+
+      <i class="fa fa-angle-right"></i>
+      <p><button class="myBtn">新增教師</button></p>
+      
+      <!-- Modal content -->
+
+      <div id="myModal" class="modal"><div class="modal-content">
+        <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>新增教師</h2>
+        </div>
+        
+        
+      <div class="modal-body"><div class="container"><div class="row"><div class="col col-md-8 mx-auto">
+      <form action="/teacher" enctype='multipart/form-data' method='POST'>
+      <select id="input_example" name="imgtype">
+      {%for cNav in cNavs%}
+      <option value ="{{cNavs[cNav][2]}}">{{'{}-{}'.format(cNavs[cNav][1],cNavs[cNav][3])}}</option>
+      {%endfor%}
+      <textarea class="textarea" style="height: 50px"  name="teachername" placeholder="老師名稱"></textarea>
+      <textarea class="textarea"  name="teachercontent" placeholder="介紹"></textarea>
+      <input type="file" name="img" style="margin-top:20px;"/></input>
+      </div></div></div></div>
+      <div class="modal-footer">
+        <h3><input type="submit" value="上傳" class="button-new" style="margin-top:15px;"/></h3>
+      </div>
+      </form>
+      </div></div>
+
+       <!-- Trigger/Open The Modal -->
+       <i class="fa fa-angle-right"></i>
+          <p><button class="myBtn">修改資訊</button>
+            <!-- The Modal -->
+            <div id="myModal2" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">×</span>
+                  <h2>修改資訊</h2>
+                </div>
+                <div class="modal-body"><div class="container"><div class="row"><div class="col col-md-8 mx-auto">
+        <form method="post" action="/teacher">
+              <textarea class="textarea" style="width:50% ;height: 60px" name="{{As[0][0]}}">{{As[0][2]}}</textarea> 
+              <textarea class="textarea" style="width:50% ;height: 60px" name="{{Bs[0][0]}}">{{Bs[0][2]}}</textarea> 
+              <small class="form-text">提示： 重考班</small>
+              <textarea class="textarea" style="width:50% ;height: 60px" name="{{Bs[1][0]}}">{{Bs[1][2]}}</textarea> 
+              <small class="form-text">提示： 家教班</small>
+        </div></div></div></div>
+              <div class="modal-footer">
+              <h3><input type="submit" value="上傳" class="button-new" style="margin-top:15px;"/></h3>
+            </div>
+            </form>
+            </div></div>
+      {% endif %}
+
     </div>
-    <h1 class="content-page-title">師資介紹</h1>
+    <h1 class="content-page-title">{% for nav in navs %}{% if url_for(request.endpoint)[1:] == nav[4] %}{{ nav[3] }}{% endif %}{% endfor %}</h1>
   </div>
   <section class="teacher-content">
     <div class="container-fluid">
       <div class="top-tab">
-        <button class="tablinks" onclick="openType(event, '重考班')" id="defaultOpen">重考班</button>
-        <button class="tablinks" onclick="openType(event, '家教班')">家教班</button>
+        {% for subNav in subNavs%}
+        <button class="tablinks" onclick="openType(event, '{{subNav[3]}}');"  
+        id="{{subNav[0]}}" >{{subNav[3]}}</button>
+        {% endfor %}
       </div>
-      <div id="重考班" class="tabcontent">
+      {% for subNav in subNavs%}
+      {%if subNav[3] == '重考班'%}
+      <div id="{{ subNav[3] }}"  class="tabcontent">
+      {%else%}
+      <div id="{{ subNav[3] }}" class="tabcontent">
+      {%endif%}
         <div class="row mr-0">
-          <div class="col-12 col-sm-3 left-tab">
-            <button class="left-tablinks" onclick="openContentType(event, '國文')" id="leftDefaultOpen">
-              國文
-            </button>
-            <button class="left-tablinks" onclick="openContentType(event, '英文')" id="leftDefaultOpen">
-              英文
-            </button>
-            <button class="left-tablinks" onclick="openContentType(event, '數學')" id="leftDefaultOpen">
-              數學
-            </button>
-            <button class="left-tablinks" onclick="openContentType(event, '自然')" id="leftDefaultOpen">
-              自然
-            </button>
-            <button class="left-tablinks" onclick="openContentType(event, '社會')" id="leftDefaultOpen">
-              社會
-            </button>
+          <div class="col-12 col-md-3 col-lg-2 left-tab">
+          {% for c in cNavs if subNav[0]==cNavs[c][0]%}
+          <button class="left-tablinks" onclick="openContentType(event, 'content{{c}}')" id="left{{c}}">{{cNavs[c][3]}}</button>
+          {% endfor %}
           </div>
-          <div id="國文" class="col-12 col-sm-9 left-tabcontent">
-            <div id="國文content" class="row"></div>
-          </div>
-          <div id="英文" class="col-12 col-sm-9 left-tabcontent">
-            <div id="英文content" class="row"></div>
-          </div>
-          <div id="數學" class="col-12 col-sm-9 left-tabcontent">
-            <div id="數學content" class="row"></div>
-          </div>
-          <div id="自然" class="col-12 col-sm-9 left-tabcontent">
-            <div id="自然content" class="row"></div>
-          </div>
-          <div id="社會" class="col-12 col-sm-9 left-tabcontent">
-            <div id="社會content" class="row"></div>
-          </div>
+
+
+          {% for c in cNavs if subNav[0]==cNavs[c][0]%}
+          <div id="content{{c}}" class="col-12 col-md-9 col-lg-9 left-tabcontent">
+              <h2 class="classB-title">{{subNav[3]}} - {{cNavs[c][3]}}</h2>
+              <p class="text-center">{{As[0][2]}}</p>
+              {% if subNav[3] == '重考班' %}<p class="text-center">{{Bs[0][2]}}</p>{% endif %}
+              {% if subNav[3] == '家教班' %}<p class="text-center">{{Bs[1][2]}}</p>{% endif %}
+                <div class="col-12"> <div id="{{c}}content" class="row">
+                      {% for t in tNavs if cNavs[c][2] == tNavs[t][0]%}
+                          <div class="col-12 col-md-4 col-sm-6 teacher-item">
+                            <div class="popup" {%if tNavs[t][2]%} onmouseenter="showPopUp('{{tNavs[t][2]}}')" onmouseleave="hidePopUp('{{tNavs[t][2]}}')"{%endif%}>
+                              {%if tNavs[t][5]!='none'%}<img src="static/img/{{tNavs[t][2]}}.jpg" width="100%" alt="{{tNavs[t][3]}}">{%endif%}
+                              <span class="popuptext{%if not tNavs[t][2]%}' show'}{%endif%}" id="teacherPopup-{{tNavs[t][2]}}">
+                                <div class="fill-height overflow-auto scroll-behavior-contain">
+                                  <span class="text-pre-wrap">{{tNavs[t][4]}}</span>
+                                </div>
+                              </span>
+                            </div>                          
+                            <h4>{{tNavs[t][3]}}老師</h4>
+                          </div>
+                      {% endfor %}   
+                </div></div>
+            </div>
+          {% endfor %}
         </div>
       </div>
+      {% endfor %}
 
-      <div id="家教班" class="tabcontent">
-        <h3>家教班內容</h3>
-      </div>
+
     </div>
   </section>
   {% endblock %}
   {% block script %}
+  <script type="text/javascript" src="static/js/teacherRender.js"></script>
   <script type="text/javascript" defer>
-    window.onscroll = function () {
-      scrollFunction()
-    };
 
-    function scrollFunction() {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementById("main-navbar").style.backgroundColor = "#fcb527";
-      } else {
-        document.getElementById("main-navbar").style.backgroundColor = "transparent";
-      }
-    }
+      document.getElementById("1cbddc0a-818b-4b6c-b069-5d662152b22b").click();
+      document.getElementById("leftf2406058-a6c8-452c-9540-6eaf56171998").click();
 
     // Top tab
     function openType(evt, type) {
@@ -101,10 +156,22 @@
       }
       document.getElementById(type).style.display = "block";
       evt.currentTarget.className += " active";
+      console.log(evt.currentTarget.id)
+      if (evt.currentTarget.id == '1cbddc0a-818b-4b6c-b069-5d662152b22b'){
+        document.getElementById("leftf2406058-a6c8-452c-9540-6eaf56171998").click();
+      }else if(evt.currentTarget.id == '53aacb2c-9f7f-4d0c-97d6-8b4c51d57f49'){
+        document.getElementById("left8f3a7553-e134-45c3-bbfb-f452e4c0b4e9").click();
+      }else
+      {console.log('不載清單內')}
     }
 
-    document.getElementById("defaultOpen").click();
     // left
+      // teacherPopUp
+    function myFunction() {
+      var popup = document.getElementById("teacherPopup");
+      popup.classList.toggle("show");
+    }
+
     function openContentType(evt, typeName) {
       var i, lefTabcontent, leftTablinks;
       lefTabcontent = document.getElementsByClassName("left-tabcontent");
@@ -119,35 +186,10 @@
       evt.currentTarget.className += " active";
     }
 
-    document.getElementById("leftDefaultOpen").click();
 
-    (function renderList() {
-      fetch('./static/data/teachers.json')
-      .then((res) => res.json())
-      .then((/** @type {unknown[]} */ data) => {
-        const group = data.reduce((pv, cv) => {
-          const key = cv.group
-          if (!Array.isArray(pv[key])) pv[key] = []
 
-          const imageUrl = cv.imageUrl ? new URL(cv.imageUrl, window.location.origin).toString() : null
-          const obj = {
-            ...cv,
-            imageUrl,
-          }
-          pv[key].push(obj)
 
-          return pv
-        }, {})
 
-        for (const key in group) {
-          if (Object.hasOwnProperty.call(group, key)) {
-            const list = group[key]
-            const render = list.map(tempCol).join('')
-            const content = document.getElementById(`${key}content`)
-            content.innerHTML = render
-          }
-        }
-      })
-    })()
+
   </script>
 {% endblock %}
